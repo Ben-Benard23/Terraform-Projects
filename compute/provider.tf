@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7294159a540bd29dc4a7b14de2f2135ee877bac065f43a062320516874b5a895
-size 337
+terraform {
+ # required_version = ">= 1.3"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "4.55.0"
+    }
+  }
+}
+
+provider "aws" {
+  region     = "us-west-2"
+  profile = "default"
+}
+
+
+# Create a VPC
+resource "aws_vpc" "projectA-vpc" {
+  cidr_block = "10.0.0.0/16"
+
+  tags = {
+    Name = "main"
+  }
+}
