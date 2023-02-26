@@ -7,7 +7,7 @@
 
 # output "public_ip" {
 #     value = aws_instance.webserver.public_ip
-  
+
 # }
 
 
@@ -20,7 +20,7 @@
 
 # Using map:                     
 #  	terraform apply -var='tags={"Name":"Webserver","Project":"terraform", "Environment":"prod"}'
-                              
+
 
 
 # export TF_VAR_ami=ami-0735c191cf914754d
